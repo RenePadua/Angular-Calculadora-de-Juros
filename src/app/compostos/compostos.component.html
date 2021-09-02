@@ -1,0 +1,36 @@
+<div class="container-fluid">
+<h1>Cálculo de Juros Compostos</h1>
+
+<h2>Insira o valor</h2>
+<input class="form-control" type="number" [(ngModel)]="v" min="0">
+
+<h2>Insira a taxa de juros</h2>
+<input class="form-control" type="number" [(ngModel)]="t" min="0">
+
+<h2>Insira o número de meses</h2>
+<input class="form-control" type="number" [(ngModel)]="m" min="0">
+
+<hr/>
+
+<div ng-app="" ng-init="">
+<p>Resultado da aplicação de Juros Compostos: R$ {{CompostosResultado()}}</p>
+
+</div>
+<div id="tabela">
+<table>
+<thead>
+  <th>Período</th>
+  <th>Acumulado ao mês</th>
+
+</thead>
+<tbody>
+  <tr *ngFor="let jurosCompostos of CompostosTable(); index as i;">
+    <td>{{i+1}}º Mês</td>
+
+    <td>R$ {{jurosCompostos}}</td>
+  </tr>
+</tbody>
+</table>
+</div>
+
+</div>
